@@ -1,18 +1,17 @@
 Feature: Perform registration process for new users and Sign Out
-  Scenario: Create user one
+  Scenario: Create 1st user
     Given Initialize the browser with chrome
-    And Navigate to "http://automationpractice.com" site
-    And Go to Sign in page
-    And Provide "first" user email and click on Create an account
-    When Providing "first" user information
+    And Navigate to "https://letcode.in/" site
+    And Go to Sign up page
+    When Providing "1st" user information
     Then Verify that user is succesfully created
     And close browsers
 
-  Scenario: Create user two
+  Scenario: Create 2nd user
     Given Initialize the browser with chrome
-    And Navigate to "http://automationpractice.com" site
-    And Go to Sign in page
-    And Provide "second" user email and click on Create an account
-    When Providing "second" user information
+    And Navigate to "https://letcode.in/" site
+    And Go to Sign up page
+    When Providing "2nd" user information
     Then Verify that user is succesfully created
     And close browsers
+

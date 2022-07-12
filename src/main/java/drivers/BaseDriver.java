@@ -16,8 +16,8 @@ public class BaseDriver {
     public WebDriver driver;
 
     public WebDriver initializeDriver() {
-        Properties prop = loadProperties("data.properties");
-        String browserName = prop.getProperty("browser");
+        Properties prop = loadProperties("env.properties");
+        String browserName = prop.getProperty("browser1");
 
         switch (browserName) {
             case "firefox":
@@ -34,10 +34,12 @@ public class BaseDriver {
                 break;
         }
 
+        PageDriver.getInstance().setDriver(driver);
+        driver = PageDriver.getCurrentDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        PageDriver.getInstance().setDriver(driver);
         return driver;
+
     }
 
 }

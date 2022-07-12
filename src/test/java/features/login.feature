@@ -6,7 +6,10 @@ Feature: Login into Application
     And close browsers
 
 
-
+  Scenario: Positive test validating login
+    Given Initialize the browser with chrome
+    And Navigate to "http://google.com" site
+    And close browsers
 
 
 

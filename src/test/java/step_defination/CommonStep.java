@@ -7,7 +7,7 @@ import drivers.BaseDriver;
 public class CommonStep extends BaseDriver {
 
     @Given("^Initialize the browser with chrome$")
-    public void initialize_browser() throws Throwable {
+    public void initialize_browser() {
         driver = initializeDriver();
     }
 

@@ -10,13 +10,15 @@ import pages.SignupPage;
 
 import java.util.Properties;
 
+import static utils.CommonMethods.softAssert;
 import static utils.DataParser.loadProperties;
 
 public class RegisterStep {
+    HomePage home_page = new HomePage();
+    SignupPage signup_page = new SignupPage();
 
     @And("^Go to Sign up page$")
     public void go_to_sign_in_page() {
-        HomePage home_page = new HomePage();
         home_page.signupButtonClick();
     }
 
@@ -35,21 +37,20 @@ public class RegisterStep {
         } else {
             name = email = password = "";
         }
-        SignupPage signup_page = new SignupPage();
         signup_page.signupInfo(name, email, password);
         signup_page.signupSubmit();
     }
 
     @Then("^Verify that user is succesfully created$")
     public void verify_user_created() {
-        HomePage home_page = new HomePage();
         boolean verify_condition = home_page.signoutButtonSize() > 0;
         if (verify_condition) {
             System.out.println("User created successfully!");
         } else {
             System.out.println("User creation failed!");
         }
-        Assert.assertTrue(verify_condition);
+        softAssert().assertTrue(verify_condition);
+        softAssert().assertAll();
     }
 
 }

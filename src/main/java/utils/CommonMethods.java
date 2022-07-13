@@ -7,10 +7,20 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
 public class CommonMethods {
+
+    public static SoftAssert soft_assert = null;
+
+    public static SoftAssert softAssert() {
+        if (soft_assert == null) {
+            soft_assert = new SoftAssert();
+        }
+        return soft_assert;
+    }
 
     public static String getTitle() {
         return PageDriver.getCurrentDriver().getTitle();

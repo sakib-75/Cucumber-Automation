@@ -12,7 +12,7 @@ import java.util.Properties;
 
 import static utils.DataParser.loadProperties;
 
-public class RegisterStep extends BaseDriver {
+public class RegisterStep {
 
     @And("^Go to Sign up page$")
     public void go_to_sign_in_page() {

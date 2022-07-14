@@ -1,10 +1,8 @@
 package step_defination;
 
-import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 import pages.HomePage;
 import pages.LoginPage;
 
@@ -14,7 +12,7 @@ public class LoginStep {
     HomePage home_page = new HomePage();
     LoginPage login_page = new LoginPage();
 
-    @And("^Go to Log in page$")
+    @Given("^Go to Log in page$")
     public void login_page() {
         home_page.loginButtonClick();
     }

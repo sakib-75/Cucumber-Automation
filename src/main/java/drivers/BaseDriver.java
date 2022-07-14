@@ -7,18 +7,12 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
-import java.util.Properties;
-
-import static utils.DataParser.loadProperties;
 
 public class BaseDriver {
 
     public WebDriver driver;
 
-    public WebDriver initializeDriver() {
-        Properties prop = loadProperties("env.properties");
-        String browserName = prop.getProperty("browser1");
-
+    public WebDriver initializeDriver(String browserName) {
         switch (browserName) {
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
@@ -33,13 +27,11 @@ public class BaseDriver {
                 driver = new ChromeDriver();
                 break;
         }
-
         PageDriver.getInstance().setDriver(driver);
         driver = PageDriver.getCurrentDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return driver;
-
     }
 
 }

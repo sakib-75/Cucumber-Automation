@@ -1,10 +1,8 @@
 package step_defination;
 
-import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import drivers.BaseDriver;
-import org.testng.Assert;
 import pages.HomePage;
 import pages.SignupPage;
 
@@ -17,7 +15,7 @@ public class RegisterStep {
     HomePage home_page = new HomePage();
     SignupPage signup_page = new SignupPage();
 
-    @And("^Go to Sign up page$")
+    @Given("^Go to Sign up page$")
     public void go_to_sign_in_page() {
         home_page.signupButtonClick();
     }

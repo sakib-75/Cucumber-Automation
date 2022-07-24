@@ -1,7 +1,6 @@
 package pages;
 
 import drivers.PageDriver;
-import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -26,22 +25,18 @@ public class HomePage {
     @FindBy(xpath = "//a[normalize-space()='Sign out']")
     List<WebElement> signoutButtonList;
 
-    @Step("Click on signup button")
     public void signupButtonClick() {
         signupButton.click();
     }
 
-    @Step("Click on login button")
     public void loginButtonClick() {
         loginButton.click();
     }
 
-    @Step("Return signout button count")
     public int signoutButtonSize() {
         return signoutButtonList.size();
     }
 
-    @Step("Click on signout button")
     public void logout() {
         signoutButton.click();
     }

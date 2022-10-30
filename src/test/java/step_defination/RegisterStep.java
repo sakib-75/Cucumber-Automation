@@ -39,7 +39,7 @@ public class RegisterStep {
         signup_page.signupSubmit();
     }
 
-    @Then("^Verify that user is succesfully created$")
+    @Then("^Verify that user is successfully created$")
     public void verify_user_created() {
         boolean verify_condition = home_page.signoutButtonSize() > 0;
         if (verify_condition) {

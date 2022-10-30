@@ -23,7 +23,7 @@ public class LoginStep {
         login_page.loginSubmit();
     }
 
-    @Then("^Verify that user is succesfully logged in$")
+    @Then("^Verify that user is successfully logged in$")
     public void verify_login() {
         boolean verify_condition = home_page.signoutButtonSize() > 0;
         if (verify_condition) {

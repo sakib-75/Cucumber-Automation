@@ -31,12 +31,12 @@ public class CommonMethods {
         element.sendKeys(value);
     }
 
-    public static void elementHover(WebElement element) {
+    public static void hoverElement(WebElement element) {
         Actions actions = new Actions(PageDriver.getCurrentDriver());
         actions.clickAndHold(element).build().perform();
     }
 
-    public static void selectitem(WebElement element, String value) {
+    public static void selectItem(WebElement element, String value) {
         Select selectItems = new Select(element);
         selectItems.selectByValue(value);
     }
